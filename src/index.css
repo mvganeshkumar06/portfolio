@@ -56,7 +56,7 @@ a.left:hover:before {
 
 .bg{ 
 
-    background-image: url('../Assets/BG.jpg');
+    background-image: url('./Assets/BG.jpg');
     background-position: 90% 48%;
     width: 1220px;
     height: 350px;
