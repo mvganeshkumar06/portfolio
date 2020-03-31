@@ -68,8 +68,8 @@ a.left:hover:before {
 
 body{
 
-background: rgb(34, 90, 195);
-background: linear-gradient(28deg, rgb(0, 110, 255) 0%, rgb(0, 241, 120) 100%);
+    background: rgb(131,58,180);
+    background: linear-gradient(90deg, rgba(131,58,180,1) , rgba(252,176,69,1) 100%);
 
 }
 
@@ -92,8 +92,13 @@ background: linear-gradient(28deg, rgb(0, 110, 255) 0%, rgb(0, 241, 120) 100%);
 }
 
 .p1{
-    width: 520px;
-    height: 250px;
+    width: 440px;
+    height: 220px;
+}
+
+.p1:hover{
+    transform: scale(1.05,1.05);
+    box-shadow: 1.2px 1px black;
 }
 
 
