@@ -60,16 +60,12 @@ body{
     background: linear-gradient(90deg, rgba(131,58,180,1) , rgba(252,176,69,1) 100%);
 }
 
-
 .container{
 
     display: flex;
     justify-content: space-evenly;  
+    flex-wrap: wrap;
 
-}
-
-.head{
-    margin-left: 2em;
 }
 
 .flex-item-1{
@@ -107,4 +103,35 @@ body{
     transform: scale(1.1,1.1);
     box-shadow: 2px 2px black;
 
+}
+
+
+@media (min-width: 300px) and (max-width: 780px){
+
+    .intro{
+        position: absolute;
+        bottom: 4em;
+    }
+
+    .container{
+        display: flex;
+        justify-content: space-evenly;  
+    }
+    
+    .flex-item-2{
+        
+        position: relative;
+        bottom: 6em;
+        right: 5em;
+    
+    }
+    
+    .me{
+        border-radius: 20px;
+        width: 200px;
+        height: 200px;
+        position: relative;
+        right: 0.8em;
+    }
+    
 }

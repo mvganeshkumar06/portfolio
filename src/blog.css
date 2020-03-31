@@ -60,17 +60,21 @@ a.left:hover:before {
     width: 100%;
 }
 
-.head{
-    position: relative;
-    left: 26em; 
+.intro{
+    position: absolute;
+    top: 4em;
+    left: 4em;
 }
 
-.head-info{
-    position: relative;
-    left: 25em;
-} 
 
-.container{
-    position: absolute;
-    margin-top: 5em;
+
+@media (min-width: 300px) and (max-width: 780px){
+
+    .intro{
+        position: absolute;
+        top: 5em;
+        left: 1em;
+        font-size: medium;
+    }
+    
 }
