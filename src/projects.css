@@ -86,8 +86,8 @@ body{
 }
 
 .p1{
-    width: 440px;
-    height: 220px;
+    width: 90%;
+    height: auto;
 }
 
 .p1:hover{
@@ -114,7 +114,7 @@ body{
   
     .intro{
         position: absolute;
-        left: 0.6em;
+        left: 1em;
     }
 
     .container{
@@ -122,8 +122,8 @@ body{
     }
     
     .p1{
-        width: 280px;
-        height: 190px;
+        max-width: 100%;
+        height: auto;
     }
 
     .flex-item-1{
