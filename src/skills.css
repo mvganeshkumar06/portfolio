@@ -107,6 +107,7 @@ body{
     justify-content: start;
     position: relative;
     top: 2em;
+    padding: 0em 1em;
 }
 
 .info-head-2{
@@ -121,20 +122,22 @@ body{
     justify-content: start;
     position: relative;
     top: 5em;
+    padding: 0em 1em;
 }
 
 
 @media (min-width: 300px) and (max-width: 780px){
 
-
+/* 
     .parent-container{
         text-align: center;
-    }
+    } */
 
     .intro{
         position: relative;
         top: 5em;
-        left: 1.5em;
+        left: 1em; 
+        padding: 0em 2em;
     }
     .child-container{
         position: relative;
@@ -154,9 +157,9 @@ body{
     }
 
     .info-head-1{
-        text-align: left;
         position: relative;
-        right: 0.5em;
+        padding: 0em 2em;
+        right: 2em;
         bottom: 1em;
     }
     
@@ -169,8 +172,9 @@ body{
     .info-head-2{
         text-align: left;
         position: relative;
+        padding: 0em 2em;
         top: 1em;
-        right: 0.5em;
+        right: 2em;
     }
 
     .flex-item-2{
