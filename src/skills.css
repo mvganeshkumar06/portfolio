@@ -62,14 +62,20 @@ body{
 
 }
 
+.parent-container{
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+
 .intro{
     position: relative;
     top: 5em;
     left: 5em;
 }
 
-.container{
-    position: absolute;
+.child-container{
+    position: relative;
     top: 15em;
     left: 5em;
 }
@@ -78,6 +84,11 @@ body{
     width: 150px;
     height: auto;
     margin: 0px 10px;
+}
+
+.info{
+    margin-top: 25px;
+    text-align: center;
 }
 
 .logo:hover{ 
@@ -90,28 +101,84 @@ body{
     bottom: 1em;
 }
 
-.info{
-    text-align: center;
-    color: white;
-    margin-top: 10px;
-}
-
 .flex-item-1{
     display: flex;
     flex-wrap: wrap;
     justify-content: start;
+    position: relative;
+    top: 2em;
 }
 
 .info-head-2{
     text-align: center;
     position: relative;
-    top: 1em;
+    top: 3em;
 }
 
 .flex-item-2{
-    position: absolute;
-    top: 30em;
     display: flex;
     flex-wrap: wrap;
     justify-content: start;
+    position: relative;
+    top: 5em;
+}
+
+
+@media (min-width: 300px) and (max-width: 780px){
+
+
+    .parent-container{
+        text-align: center;
+    }
+
+    .intro{
+        position: relative;
+        top: 5em;
+        left: 1.5em;
+    }
+    .child-container{
+        position: relative;
+        top: 10em;
+        left: 3em;
+    }
+
+    .logo{
+        width: 150px;
+        height: auto;
+    }
+
+    .info{
+        margin-top: 1em;
+        margin-bottom: 3em;
+        text-align: center;
+    }
+
+    .info-head-1{
+        text-align: left;
+        position: relative;
+        right: 0.5em;
+        bottom: 1em;
+    }
+    
+    .flex-item-1{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: start;
+    }
+    
+    .info-head-2{
+        text-align: left;
+        position: relative;
+        top: 1em;
+        right: 0.5em;
+    }
+
+    .flex-item-2{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: start;
+        position: relative;
+        top: 5em;
+    }
+    
 }
