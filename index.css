@@ -41,7 +41,7 @@ body {
   padding: 5px;
   margin: 1em;
   background-color: rgb(216, 236, 253);
-  border-radius: 10px;
+  border-radius: 5px;
 }
 
 #skills,
@@ -66,7 +66,7 @@ body {
 #profile {
   width: 150px;
   height: 150px;
-  border-radius: 10px;
+  border-radius: 5px;
 }
 
 #find {
@@ -84,7 +84,7 @@ body {
   width: 40px;
   height: 40px;
   margin: 10px;
-  border-radius: 10px;
+  border-radius: 5px;
 }
 
 .icons:hover {
