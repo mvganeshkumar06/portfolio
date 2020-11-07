@@ -3,10 +3,12 @@
   padding: 0px;
   box-sizing: border-box;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  --primaryColor: #ffede6;
+  --secondaryColor: #ff7b00;
 }
 
 body {
-  height: 100vh;
+  background-color: var(--primaryColor);
 }
 
 #navbar {
@@ -16,13 +18,16 @@ body {
   justify-content: space-evenly;
 }
 
-ul,
-a {
+ul {
   list-style-type: none;
 }
 
-body {
-  background: rgb(238, 211, 255);
+a {
+  text-decoration: none;
+  color: black;
+}
+#home {
+  color: var(--secondaryColor);
 }
 
 #container {
@@ -40,7 +45,6 @@ body {
   width: 90%;
   padding: 5px;
   margin: 1em;
-  background-color: rgb(216, 236, 253);
   border-radius: 5px;
 }
 

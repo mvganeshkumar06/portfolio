@@ -3,6 +3,8 @@
   padding: 0px;
   box-sizing: border-box;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  --primaryColor: #ffede6;
+  --secondaryColor: #ff7b00;
 }
 
 #navbar {
@@ -12,13 +14,20 @@
   justify-content: space-evenly;
 }
 
-ul,
-a {
+ul {
   list-style-type: none;
 }
 
+a {
+  text-decoration: none;
+  color: black;
+}
+#projects {
+  color: var(--secondaryColor);
+}
+
 body {
-  background: rgb(238, 211, 255);
+  background: var(--primaryColor);
 }
 
 #projectContainer {
@@ -29,7 +38,6 @@ body {
 
 #projectItem-1 {
   width: 100%;
-  background-color: rgb(216, 236, 253);
   margin: 1em;
   border-radius: 5px;
 }
@@ -51,7 +59,7 @@ body {
 }
 
 .btn {
-  background-color: rgb(255, 64, 64);
+  background-color: rgb(255, 56, 56);
   color: white;
   font-weight: bolder;
   border: none;
