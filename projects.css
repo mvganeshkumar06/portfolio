@@ -36,20 +36,28 @@ body {
   flex-wrap: wrap;
 }
 
-#projectItem-1 {
+#projectItem-1,
+#projectItem-2 {
   width: 100%;
   margin: 1em;
   border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .projectImage {
   width: 90%;
   border-radius: 5px;
-  margin: 10px;
+  margin: 12px;
 }
 
 .projectImage:hover {
   box-shadow: 1.2px 1px black;
+}
+
+#projectItem-1 img {
+  width: 80%;
 }
 
 #link {
@@ -65,6 +73,7 @@ body {
   border: none;
   border-radius: 5px;
   padding: 5px;
+  margin: 5px;
 }
 
 .btn:hover {
@@ -76,11 +85,16 @@ body {
 }
 
 @media (min-width: 600px) {
-  #projectItem-1 {
+  #projectItem-1,
+  #projectItem-2 {
     width: 40%;
   }
 
   .projectImage {
-    width: 90%;
+    width: 70%;
+  }
+
+  #projectItem-1 img {
+    width: 50%;
   }
 }
