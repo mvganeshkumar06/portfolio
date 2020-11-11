@@ -3,8 +3,8 @@
   padding: 0px;
   box-sizing: border-box;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  --primaryColor: #ffede6;
-  --secondaryColor: #ff7b00;
+  --primaryColor: #ffffff;
+  --secondaryColor: #ff9100;
 }
 
 #navbar {

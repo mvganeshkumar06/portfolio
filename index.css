@@ -3,8 +3,8 @@
   padding: 0px;
   box-sizing: border-box;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  --primaryColor: #ffede6;
-  --secondaryColor: #ff7b00;
+  --primaryColor: #ffffff;
+  --secondaryColor: #ff9100;
 }
 
 body {
@@ -36,6 +36,10 @@ a {
   grid-template-columns: 1fr;
 }
 
+#container li {
+  list-style-type: square;
+}
+
 #infoCard {
   width: 100%;
 }
@@ -50,9 +54,9 @@ a {
 
 #skills,
 #education {
+  font-size: large;
   font-weight: 700;
-  margin: 5px;
-  text-decoration: underline;
+  margin: 10px;
 }
 
 #skillCard li,
@@ -74,7 +78,6 @@ a {
 }
 
 #find {
-  text-decoration: underline;
   margin: 10px;
 }
 
