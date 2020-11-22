@@ -3,31 +3,64 @@
   padding: 0px;
   box-sizing: border-box;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  --primaryColor: #ffffff;
-  --secondaryColor: #ff9100;
+  font-size: small;
+  --primaryColor: #0084ffc4;
+  --secondaryColor: #f8a436;
+}
+
+#navbarContainer {
+  width: 100vw;
+  height: 50px;
+  position: fixed;
+  top: 0px;
+  background-color: white;
+  box-shadow: 1px 1px 10px 1px rgb(224, 224, 224);
 }
 
 #navbar {
-  height: 30px;
+  width: 100vw;
+  height: 50px;
+  position: fixed;
+  top: 0px;
   font-weight: bolder;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+ul {
+  list-style-type: none;
 }
 
 a {
   text-decoration: none;
   color: black;
 }
+
+#navText {
+  position: fixed;
+  top: 0px;
+  margin: 18px 0px 10px 1vw;
+  display: none;
+}
+
+#navbar a {
+  margin-right: 5vw;
+}
+
+#profile {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  margin: 5px 5px 5px 10px;
+}
+
 #blogs {
   color: var(--secondaryColor);
 }
 
-body {
-  background: var(--primaryColor);
-}
-
-ul {
-  list-style-type: none;
+#blogContainer {
+  margin-top: 80px;
 }
 
 #head {
@@ -35,4 +68,20 @@ ul {
   font-weight: bold;
   text-align: center;
   margin: 10px;
+}
+
+@media (min-width: 400px) {
+  #navText {
+    display: inline;
+    font-weight: bold;
+  }
+}
+
+@media (min-width: 600px) {
+  * {
+    font-size: medium;
+  }
+  #navText {
+    margin: 15px 0px 10px 1vw;
+  }
 }

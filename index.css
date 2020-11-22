@@ -4,16 +4,28 @@
   box-sizing: border-box;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-size: small;
-  /* --primaryColor: #0084ffc4; */
+  --primaryColor: #0084ffc4;
   --secondaryColor: #f8a436;
 }
 
+#navbarContainer {
+  width: 100vw;
+  height: 50px;
+  position: fixed;
+  top: 0px;
+  background-color: white;
+  box-shadow: 1px 1px 10px 1px rgb(224, 224, 224);
+}
+
 #navbar {
-  height: 30px;
+  width: 100vw;
+  height: 50px;
+  position: fixed;
+  top: 0px;
   font-weight: bolder;
   display: flex;
-  justify-content: space-evenly;
-  margin-bottom: 10px;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 ul {
@@ -24,6 +36,18 @@ a {
   text-decoration: none;
   color: black;
 }
+
+#navText {
+  position: fixed;
+  top: 0px;
+  margin: 18px 0px 10px 1vw;
+  display: none;
+}
+
+#navbar a {
+  margin-right: 5vw;
+}
+
 #home {
   color: var(--secondaryColor);
 }
@@ -32,6 +56,7 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 80px;
 }
 
 #container li {
@@ -64,7 +89,6 @@ a {
 }
 
 #aboutCard {
-  /* display: flex; */
   padding: 20px;
 }
 
@@ -74,10 +98,10 @@ a {
 }
 
 #profile {
-  width: 80px;
-  height: 120px;
+  width: 40px;
+  height: 40px;
   border-radius: 10px;
-  margin-top: 25px;
+  margin: 5px 5px 5px 10px;
 }
 
 #find {
@@ -101,9 +125,19 @@ a {
   box-shadow: 2px 2px black;
 }
 
+@media (min-width: 400px) {
+  #navText {
+    display: inline;
+    font-weight: bold;
+  }
+}
+
 @media (min-width: 600px) {
   * {
     font-size: medium;
+  }
+  #navText {
+    margin: 15px 0px 10px 1vw;
   }
   #skillCard,
   #educationCard,
