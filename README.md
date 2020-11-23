@@ -1,3 +1,3 @@
 # Portfolio
 
-[Portfolio Link](ganesh-kumar.netlify.app)
+[Portfolio Link](https://ganesh-kumar.netlify.app/)
