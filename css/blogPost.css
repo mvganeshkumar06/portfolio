@@ -3,9 +3,6 @@
   padding: 0px;
   box-sizing: border-box;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  font-size: small;
-  --primaryColor: #0084ffc4;
-  --secondaryColor: #f8a436;
 }
 
 #navbarContainer {
@@ -35,6 +32,12 @@ ul {
 a {
   text-decoration: none;
   color: black;
+  position: relative;
+  top: 0px;
+}
+
+a:hover {
+  text-decoration: underline;
 }
 
 #navText {
@@ -48,26 +51,25 @@ a {
   margin-right: 5vw;
 }
 
+#title,
+#date {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#postContainer {
+  margin-top: 80px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 #profile {
   width: 40px;
   height: 40px;
   border-radius: 10px;
   margin: 5px 5px 5px 10px;
-}
-
-#blogs {
-  color: var(--secondaryColor);
-}
-
-#blogContainer {
-  margin-top: 80px;
-}
-
-#head {
-  font-size: large;
-  font-weight: bold;
-  text-align: center;
-  margin: 10px;
 }
 
 @media (min-width: 400px) {
@@ -78,9 +80,6 @@ a {
 }
 
 @media (min-width: 600px) {
-  * {
-    font-size: medium;
-  }
   #navText {
     margin: 15px 0px 10px 1vw;
   }
