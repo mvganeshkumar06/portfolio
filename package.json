@@ -4,9 +4,9 @@
   "description": "Personal Portfolio",
   "main": "index.js",
   "scripts": {
-    "build": "npx eleventy",
-    "serve": "npx eleventy --serve",
-    "debug": "DEBUG=* npx eleventy"
+    "build": "cd blog && eleventy",
+    "serve": "cd blog && eleventy --serve",
+    "debug": "cd blog && DEBUG=* eleventy"
   },
   "repository": {
     "type": "git",
