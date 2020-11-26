@@ -1,12 +1,6 @@
 ---
 title: This is my first blog post
-date: 2020-11-23
+date: 2020-11-25
 ---
 
-Here is a sample fun javascript function.
-
-```javascript
-function greet() {
-  console.log("Welcome");
-}
-```
+This is a dummy blog post.
