@@ -60,40 +60,32 @@ a {
 }
 
 #projectContainer {
-  width: 100vw;
-  display: flex;
-  flex-wrap: wrap;
-  margin-top: 80px;
-}
-
-#projectItem-1,
-#projectItem-2 {
-  width: 100%;
-  margin: 1em;
-  border-radius: 5px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 80px;
 }
 
-.projectImage {
-  width: 90%;
+.projectItem {
+  width: 290px;
+  padding: 5px;
+  margin: 20px 0px;
   border-radius: 5px;
-  margin: 12px;
+  box-shadow: 1px 1px 10px 3px rgb(224, 224, 224);
+  text-align: center;
 }
 
-.projectImage:hover {
-  box-shadow: 1.2px 1px black;
+.projectItem p {
+  font-size: large;
+  font-weight: bold;
+  margin: 10px 0px;
 }
 
-#projectItem-1 img {
-  width: 80%;
-}
-
-#link {
+.projectLinks {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
+  margin: 20px;
 }
 
 .btn {
@@ -102,22 +94,22 @@ a {
   font-weight: bolder;
   border: none;
   border-radius: 5px;
-  padding: 5px;
-  margin: 5px;
+  padding: 4px;
+  margin: 4px;
 }
 
 .btn:hover {
   box-shadow: 1.2px 1px black;
 }
 
-.projectInfo {
-  margin: 1em;
-}
-
 @media (min-width: 400px) {
   #navText {
     display: inline;
     font-weight: bold;
+  }
+  .projectItem {
+    width: 350px;
+    padding: 10px;
   }
 }
 
@@ -129,17 +121,7 @@ a {
   #navText {
     margin: 15px 0px 10px 1vw;
   }
-
-  #projectItem-1,
-  #projectItem-2 {
-    width: 40%;
-  }
-
-  .projectImage {
-    width: 70%;
-  }
-
-  #projectItem-1 img {
-    width: 50%;
+  .projectItem {
+    width: 450px;
   }
 }

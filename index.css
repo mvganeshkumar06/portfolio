@@ -59,10 +59,6 @@ a {
   margin-top: 80px;
 }
 
-#container li {
-  list-style-type: square;
-}
-
 #skillCard,
 #educationCard,
 #aboutCard {
@@ -105,7 +101,7 @@ a {
 }
 
 #find {
-  margin: 10px;
+  margin: 20px 0px 10px 0px;
 }
 
 #social {
@@ -122,7 +118,7 @@ a {
 }
 
 .icons:hover {
-  box-shadow: 2px 2px black;
+  box-shadow: 1.2px 1px black;
 }
 
 @media (min-width: 400px) {
