@@ -38,9 +38,11 @@ exports.render = ({ title, date, content }) => {
           </ul>
         </div>
         <div id="postContainer">
-          <h1 id="title">${title}</h1>
-          <h3 id="date">${date.toLocaleDateString()}</h3>
-          ${content}
+          <div id="postItem"> 
+            <h1 id="title">${title}</h1>
+            <h3 id="date">${date.toLocaleDateString()}</h3>
+            ${content}
+          </div>
         </div>
     </body>
 </html>`;
