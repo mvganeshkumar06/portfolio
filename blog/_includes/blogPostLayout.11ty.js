@@ -21,7 +21,7 @@ exports.render = ({ title, date, content }) => {
   </head>
     <body>
         <div id="navbarContainer">
-          <img id="profile" src="../../../../assets/profile.jpg" alt="profile picture"/>
+          <img id="profile" src="../../../../assets/profile.svg" alt="profile picture"/>
           <p id="navText">GANESH KUMAR</p>
           <ul id="navbar">
             <a id="home" href="../../../../index.html">
