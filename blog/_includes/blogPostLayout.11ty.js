@@ -18,6 +18,7 @@ exports.render = ({ title, date, content }) => {
     <title>Ganesh Kumar</title>
 
     <link rel="stylesheet" href="../../../../css/blogPost.css" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.4.0/styles/vs.min.css">
   </head>
     <body>
         <div id="navbarContainer">
@@ -40,10 +41,12 @@ exports.render = ({ title, date, content }) => {
         <div id="postContainer">
           <div id="postItem"> 
             <h1 id="title">${title}</h1>
-            <h3 id="date">${date.toLocaleDateString()}</h3>
+            <p id="date">${date.toLocaleDateString()}</p>
             ${content}
           </div>
         </div>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.4.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
     </body>
 </html>`;
 };

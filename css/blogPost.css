@@ -3,6 +3,7 @@
   padding: 0px;
   box-sizing: border-box;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  --links: rgb(162, 0, 255);
 }
 
 #navbarContainer {
@@ -10,6 +11,8 @@
   height: 50px;
   position: fixed;
   top: 0px;
+  z-index: 1;
+  font-size: small;
   background-color: white;
   box-shadow: 1px 1px 10px 1px rgb(224, 224, 224);
 }
@@ -19,10 +22,18 @@
   height: 50px;
   position: fixed;
   top: 0px;
+  z-index: 1;
   font-weight: bolder;
   display: flex;
   justify-content: flex-end;
   align-items: center;
+}
+
+#profile {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  margin: 5px 5px 5px 10px;
 }
 
 ul {
@@ -31,7 +42,7 @@ ul {
 
 a {
   text-decoration: none;
-  color: black;
+  color: rgb(0, 0, 0);
   position: relative;
   top: 0px;
 }
@@ -59,26 +70,46 @@ a:hover {
 
 #postContainer {
   margin-top: 80px;
-  padding: 10px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: center;
 }
 
 #postItem {
-  width: 290px;
-  padding: 10px;
+  min-width: 280px;
+  padding: 15px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
 }
 
-#profile {
-  width: 40px;
-  height: 40px;
+h2 {
+  margin-top: 50px;
+}
+
+h3 {
+  margin-top: 25px;
+}
+
+hr {
+  margin-bottom: 25px;
+}
+
+#postItem li {
+  list-style-type: square;
+  margin: 15px 0px;
+}
+
+#postItem a {
+  color: var(--links);
+}
+
+pre {
+  box-shadow: 1px 1px 3px 1px rgb(78, 78, 78);
   border-radius: 10px;
-  margin: 5px 5px 5px 10px;
+  padding: 10px;
+  margin: 20px 0px;
+  white-space: pre;
+  overflow-x: auto;
+  z-index: 0;
 }
 
 @media (min-width: 400px) {
@@ -86,16 +117,16 @@ a:hover {
     display: inline;
     font-weight: bold;
   }
-  #postItem {
-    width: 350px;
-  }
 }
 
 @media (min-width: 600px) {
+  #navbarContainer {
+    font-size: medium;
+  }
   #navText {
     margin: 15px 0px 10px 1vw;
   }
   #postItem {
-    width: 450px;
+    width: 700px;
   }
 }

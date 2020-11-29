@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta
+      name="description"
+      content="This is my personal portfolio which I use to showcase my contributions, projects and techinal experience"
+    />
+
+    <meta name="keywords" content="potfolio-app" />
+
+    <meta name="author" content="M.V.Ganesh Kumar" />
+
+    <title>Ganesh Kumar</title>
+
+    <link rel="stylesheet" href="../../../../css/blogPost.css" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.4.0/styles/vs.min.css">
+  </head>
+    <body>
+        <div id="navbarContainer">
+          <img id="profile" src="../../../../assets/profile.svg" alt="profile picture"/>
+          <p id="navText">GANESH KUMAR</p>
+          <ul id="navbar">
+            <a id="home" href="../../../../index.html">
+              <li>HOME</li>
+            </a>
+
+            <a id="projects" href="../../../../projects.html">
+              <li>PROJECTS</li>
+            </a>
+
+            <a id="blogs" href="../../../../blog.html">
+              <li>BLOGS</li>
+            </a>
+          </ul>
+        </div>
+        <div id="postContainer">
+          <div id="postItem"> 
+            <h1 id="title">Strict mode in JavaScript</h1>
+            <p id="date">29/11/2020</p>
+            <h2>What is strict mode ?</h2>
+<hr>
+<ul>
+<li>
+<p>Strict mode is a feature introduced in es5 which helps you to run JavaScript code in a more strict operating context.</p>
+</li>
+<li>
+<p>What it means is that your code will be checked more strictly.</p>
+</li>
+</ul>
+<h2>What is the use of strict mode ?</h2>
+<hr>
+<p>The two main uses of strict mode are</p>
+<ul>
+<li>
+<p>It throws errors which was silently ignored in the past by the JavaScript engine. This helps you to write secure code.</p>
+</li>
+<li>
+<p>It fixes certain issues/mistakes that makes it difficult for the JavaScript engine to perform optimizations. This increases the performance and enables your code in strict mode to run faster than identical code in non strict mode.</p>
+</li>
+</ul>
+<h2>How to use the strict mode ?</h2>
+<hr>
+<ul>
+<li>
+<p>Strict mode can be used for a function or an entire script.</p>
+</li>
+<li>
+<p>To enable strict mode use the string <code>&quot;use strict&quot;</code> or <code>'use strict'</code> in the beginning of a function or a script.</p>
+</li>
+</ul>
+<p>Below is an example code for using strict mode.</p>
+<ul>
+<li>Using strict mode for a function</li>
+</ul>
+<pre><code class="language-javascript">function myFunction() {
+  &quot;use strict&quot;; // This enables strict mode only inside this function
+}
+</code></pre>
+<ul>
+<li>Using strict mode for an entire script</li>
+</ul>
+<pre><code class="language-javascript">&quot;use strict&quot;; // This enables strict mode for this entire script
+
+// Rest of the code here ...
+
+</code></pre>
+<h2>Common mistakes that leads to errors in strict mode</h2>
+<hr>
+<p>Here are some of the common mistakes that leads to error during strict mode and not in non strict mode.</p>
+<h3>Using variables or objects before declaring them</h3>
+<pre><code class="language-javascript">// In non strict mode
+
+myVariable = 15;
+console.log(myVariable); // This prints 15
+</code></pre>
+<pre><code class="language-javascript">&quot;use strict&quot;; // In strict mode
+
+myVariable = 15;
+console.log(myVariable); // This gives a ReferenceError
+</code></pre>
+<h3>Using reserved keywords for naming your variables.</h3>
+<pre><code class="language-javascript">// In non strict mode
+
+var let = 15; // let is a reserved keyword in JavaScript
+console.log(let); // This prints 15
+</code></pre>
+<pre><code class="language-javascript">&quot;use strict&quot;; // In strict mode
+
+var let = 15;
+console.log(let); // This gives a SyntaxError
+</code></pre>
+<h3>Using same name for multiple parameters in functions</h3>
+<pre><code class="language-javascript">// In non strict mode
+
+function myFunction(param1, param1) {
+  console.log(param1, param1); // This gives a weird output of peter peter
+}
+
+myFunction(&quot;bob&quot;, &quot;peter&quot;);
+</code></pre>
+<pre><code class="language-javascript">&quot;use strict&quot;; // In strict mode
+
+function myFunction(param1, param1) {
+  console.log(param1, param1); // This gives a SyntaxError
+}
+
+myFunction(&quot;bob&quot;, &quot;peter&quot;);
+</code></pre>
+<p><strong>Note that the above are just few examples and there are many other cases where strict mode throws error. To know more such cases visit the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode" title="Strict mode docs">MDN docs</a></strong></p>
+<h2>Strict mode is great so why not have it by default ?</h2>
+<hr>
+<p>Yes strict mode is enabled by default when using es6 modules and classes, using tools like webpack or babel etc.</p>
+<h2>Conclusion</h2>
+<hr>
+<ul>
+<li>
+<p>If you are using modern JavaScript then strict mode will be turned on by default and you don’t have to think about it much.</p>
+</li>
+<li>
+<p>I hope this article gave you some insights about strict mode.</p>
+</li>
+</ul>
+
+          </div>
+        </div>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.4.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+    </body>
+</html>
