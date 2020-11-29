@@ -14,7 +14,7 @@ date: 2020-11-29
 
 - What it means is that your code will be checked more strictly.
 
-## What is the use of strict mode ?
+## What are the benefits of strict mode ?
 
 ---
 
