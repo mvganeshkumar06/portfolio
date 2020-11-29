@@ -1,6 +1,6 @@
 ---
 permalink: "posts/strict-mode-in-javascript.html"
-permalinkBypassOutputDir: "true"
+permalinkBypassOutputDir: true
 layout: "blogPostLayout.11ty.js"
 title: Strict mode in JavaScript
 date: 2020-11-29

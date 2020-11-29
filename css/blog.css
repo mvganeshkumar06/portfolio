@@ -6,6 +6,7 @@
   font-size: small;
   --primaryColor: #0084ffc4;
   --secondaryColor: #f8a436;
+  --linkColor: rgb(162, 0, 255);
 }
 
 #navbarContainer {
@@ -65,7 +66,8 @@ a:hover {
 
 #blogContainer {
   width: 100vw;
-  margin-top: 80px;
+  height: 70vh;
+  margin: 80px 0px 50px 0px;
   padding: 10px;
   display: flex;
   flex-direction: column;
@@ -82,6 +84,40 @@ a:hover {
   justify-content: space-between;
 }
 
+.icons:hover {
+  box-shadow: 1px 1px 1px 1px rgb(104, 104, 104);
+}
+
+footer {
+  position: relative;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#heartIcon {
+  width: 20px;
+  height: 20px;
+}
+
+#iconAttribution {
+  color: var(--linkColor);
+  margin: 5px 0px;
+}
+
+#socialFooter {
+  display: flex;
+  justify-content: center;
+}
+
+#socialFooter .icons {
+  width: 30px;
+  height: 30px;
+  margin: 0px 1px;
+  border-radius: 5px;
+}
+
 @media (min-width: 400px) {
   #navText {
     display: inline;
@@ -89,6 +125,9 @@ a:hover {
   }
   #blogPostsList li {
     width: 400px;
+  }
+  #socialFooter .icons {
+    margin: 0px 5px;
   }
 }
 

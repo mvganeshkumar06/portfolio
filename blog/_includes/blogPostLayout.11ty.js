@@ -45,6 +45,53 @@ exports.render = ({ title, date, content }) => {
             ${content}
           </div>
         </div>
+        <footer>
+      <div id="socialFooter">
+        <h4>
+          Made with
+          <img
+            id="heartIcon"
+            src="https://img.icons8.com/fluent/48/000000/like.png"
+          />
+          by Ganesh Kumar
+        </h4>
+        <a
+          href="https://mvganeshkumar.netlify.app"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            class="icons"
+            src="https://img.icons8.com/windows/64/000000/domain.png"
+            alt="website"
+          />
+        </a>
+        <a
+          href="https://github.com/Ganesh-Kumar6"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            class="icons"
+            src="https://img.icons8.com/fluent/48/000000/github.png"
+            alt="github"
+          />
+        </a>
+
+        <a
+          href="https://www.linkedin.com/in/ganesh-kumar6"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            class="icons"
+            src="https://img.icons8.com/fluent/48/000000/linkedin.png"
+            alt="linkedin"
+          />
+        </a>
+      </div>
+      <a id="iconAttribution" href="https://icons8.com">Icons by Icons8</a>
+    </footer>
         <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.4.0/highlight.min.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
     </body>
