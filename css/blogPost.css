@@ -85,7 +85,7 @@ a:hover {
 }
 
 h2 {
-  margin-top: 50px;
+  margin-top: 25px;
 }
 
 h3 {
@@ -97,7 +97,7 @@ hr {
 }
 
 #postItem li {
-  list-style-type: square;
+  /* list-style-type: square; */
   margin: 15px 0px;
 }
 

@@ -8,17 +8,13 @@ date: 2020-11-29
 
 ## What is strict mode ?
 
----
-
 - Strict mode is a feature introduced in es5 which helps you to run JavaScript code in a more strict operating context.
 
 - What it means is that your code will be checked more strictly.
 
 ## What are the benefits of strict mode ?
 
----
-
-The two main uses of strict mode are
+- The two main uses of strict mode are
 
 - It throws errors which were silently ignored in the past by the JavaScript engine. This helps you to write more secure code.
 
@@ -26,13 +22,11 @@ The two main uses of strict mode are
 
 ## How to use the strict mode ?
 
----
-
 - Strict mode can be used for a function or an entire script.
 
 - To enable strict mode use the string `"use strict"` or `'use strict'` in the beginning of a function or a script.
 
-Below is an example code for using strict mode.
+- Below is an example code for using strict mode.
 
 - Using strict mode for a function
 
@@ -53,9 +47,7 @@ function myFunction() {
 
 ## Common mistakes that leads to errors in strict mode
 
----
-
-Here are some of the common mistakes that leads to error during strict mode and not in non strict mode.
+- Here are some of the common mistakes that leads to error during strict mode and not in non strict mode.
 
 ### Using variables or objects before declaring them
 
@@ -73,7 +65,7 @@ myVariable = 15;
 console.log(myVariable); // This gives a ReferenceError
 ```
 
-### Using reserved keywords for naming your variables.
+### Using reserved keywords for naming your variables
 
 ```javascript
 // In non strict mode
@@ -111,17 +103,13 @@ function myFunction(param1, param1) {
 myFunction("bob", "peter");
 ```
 
-**Note that the above are just few examples and there are many other cases where strict mode throws error. To know more such cases visit the [MDN docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode "Strict mode mdn docs")**
+- **Note that the above are just few examples and there are many other cases where strict mode throws error. To know more such cases visit the [MDN docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode "Strict mode mdn docs")**
 
 ## Strict mode is great so why not have it by default ?
 
----
-
-Yes strict mode is enabled by default when using es6 modules and classes, when using tools like webpack or babel etc.
+- Yes strict mode is enabled by default when using es6 modules and classes, when using tools like webpack or babel etc.
 
 ## Conclusion
-
----
 
 - If you are using modern JavaScript then strict mode will be turned on by default and you don’t have to think about it much.
 
