@@ -70,7 +70,7 @@ a:hover {
   text-align: center;
   width: 90%;
   padding: 5px;
-  margin: 15px 10px;
+  margin: 25px 10px;
   border-radius: 5px;
   box-shadow: 1px 1px 10px 3px rgb(224, 224, 224);
 }
@@ -126,8 +126,6 @@ a:hover {
 }
 
 footer {
-  position: relative;
-  bottom: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
