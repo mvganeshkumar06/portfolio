@@ -89,6 +89,15 @@ exports.render = ({ title, date, content }) => {
             alt="linkedin"
           />
         </a>
+        <a href="https://dev.to/ganeshkumar6" 
+          target="_blank"
+          rel="noopener noreferrer">
+          <img
+            class="icons"
+            src="https://d2fltix0v2e0sb.cloudfront.net/dev-badge.svg"
+            alt="Ganesh Kumar's DEV Profile"
+          />
+        </a>
       </div>
       <a id="iconAttribution" href="https://icons8.com">Icons by Icons8</a>
     </footer>
