@@ -136,4 +136,7 @@ footer {
   #navText {
     margin: 15px 0px 10px 1vw;
   }
+  #blogPostsList li {
+    width: 500px;
+  }
 }

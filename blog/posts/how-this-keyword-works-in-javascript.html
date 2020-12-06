@@ -1,0 +1,430 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta
+      name="description"
+      content="This is my personal portfolio which I use to showcase my contributions, projects and techinal experience"
+    />
+
+    <meta name="keywords" content="potfolio-app" />
+
+    <meta name="author" content="M.V.Ganesh Kumar" />
+
+    <title>Ganesh Kumar</title>
+
+    <link rel="stylesheet" href="../../../../css/blogPost.css" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.4.0/styles/vs.min.css">
+  </head>
+    <body>
+        <div id="navbarContainer">
+          <img id="profile" src="../../../../assets/profile.svg" alt="profile picture"/>
+          <p id="navText">GANESH KUMAR</p>
+          <ul id="navbar">
+            <a id="home" href="../../../../index.html">
+              <li>HOME</li>
+            </a>
+
+            <a id="projects" href="../../../../projects.html">
+              <li>PROJECTS</li>
+            </a>
+
+            <a id="blogs" href="../../../../blog.html">
+              <li>BLOGS</li>
+            </a>
+          </ul>
+        </div>
+        <div id="postContainer">
+          <div id="postItem"> 
+            <h1 id="title">How <em>this</em> keyword works in JavaScript</h1>
+            <p id="date">6/12/2020</p>
+            <h2>Introduction</h2>
+<ul>
+<li>
+<p><code>this</code> is a keyword in JavaScript which works very differently based on how you are using it.</p>
+</li>
+<li>
+<p>In this article we'll go through all different possible cases and see how <code>this</code> keyword works.</p>
+</li>
+</ul>
+<h2>Where <code>this</code> points to ?</h2>
+<ul>
+<li>
+<p>The reference of <code>this</code> depends on where and how you are using it.</p>
+</li>
+<li>
+<p>Let us take some examples to see where <code>this</code> points to.</p>
+</li>
+</ul>
+<h3>Using <code>this</code> globally</h3>
+<ul>
+<li>When you are using <code>this</code> globally it points to the global window object.</li>
+</ul>
+<pre><code class="language-javascript">console.log(this === window); // true
+</code></pre>
+<h3>Using <code>this</code> inside a function</h3>
+<ul>
+<li>
+<p><code>this</code> works differently when your using a regular function v/s using an arrow function.</p>
+</li>
+<li>
+<p>The reference of <code>this</code> inside a regular function depends on <strong>who is invoking the function which is accessing <code>this</code> keyword.</strong></p>
+</li>
+<li>
+<p>In arrow functions the reference of <code>this</code> depends on <strong>the surrounding scope of the function which is accessing <code>this</code> keyword.</strong></p>
+</li>
+</ul>
+<p>Don't worry if you didn't fully understand the above definition, we'll see lot of examples to understand them.</p>
+<ul>
+<li>
+<p>Whenever you want to know where <code>this</code> points to you can recall the above definition.</p>
+</li>
+<li>
+<p>Let's take an example to see the difference between using <code>this</code> in regular and arrow function.</p>
+</li>
+</ul>
+<pre><code class="language-javascript">btn.addEventListener(&quot;click&quot;, function (event) {
+    
+    console.log(event.target === this); // true
+    
+    setTimeout(function () {
+        console.log(event.target === this); // false
+        console.log(this) // window
+    }, 2000);
+
+})
+</code></pre>
+<ul>
+<li>
+<p>At first <code>this</code> was pointing to the button but after 2 seconds it points to the window object.</p>
+</li>
+<li>
+<p>Let's see why this is the case.</p>
+</li>
+<li>
+<p>Intially <code>this</code> points to the button because button was the one which called the callback function (regular function) when a click event took place.</p>
+</li>
+<li>
+<p>But after 2 seconds another callback function (regular function) is accessing <code>this</code> but it points to the window not the button because the callback function is not being invoked by the button.</p>
+</li>
+<li>
+<p>Let's see what happens if we used an arrow function as callback.</p>
+</li>
+</ul>
+<pre><code class="language-javascript">btn.addEventListener(&quot;click&quot;, function (event) {
+    
+    console.log(event.target === this); // true
+    
+    setTimeout(()=&gt;{
+        console.log(event.target === this); // true
+        console.log(this) // button
+    }, 2000);
+
+})
+</code></pre>
+<ul>
+<li>
+<p>Now <code>this</code> points to the same button even after 2 seconds.</p>
+</li>
+<li>
+<p>Try to recall the definition of <code>this</code> in an arrow function to know why this is the case.</p>
+</li>
+<li>
+<p>It's because the surrounding scope of the callback function is the button, that is why <code>this</code> still points to the button.</p>
+</li>
+</ul>
+<h3>Using <code>this</code> inside a method</h3>
+<ul>
+<li>When you are using <code>this</code> inside a method, the same rules that are discussed above can be used.</li>
+</ul>
+<pre><code class="language-javascript">let obj = {
+
+    name: &quot;peter&quot;,
+    
+    showThisOuter() {
+
+        console.log(this); // object
+
+        function showThisInner() {
+            console.log(this); // window
+        }
+
+        showThisInner();
+
+    }
+}
+
+obj.showThisOuter();
+</code></pre>
+<ul>
+<li>
+<p>Here the <code>this</code> in outer function (regular function) points to the object because the object is the one who is invoking the outer function.</p>
+</li>
+<li>
+<p>And the <code>this</code> in the inner function (regular function) is not being invoked by the object so it points to the global window object.</p>
+</li>
+<li>
+<p>Let's see what happens if we used an arrow function as outer function.</p>
+</li>
+</ul>
+<pre><code class="language-javascript">let obj = {
+    name: &quot;peter&quot;,
+    showThisOuter: () =&gt; {
+
+        console.log(this); // window
+
+        function showThisInner() {
+            console.log(this); // window
+        }
+
+        showThisInner();
+
+    }
+}
+
+obj.showThisOuter();
+</code></pre>
+<ul>
+<li>
+<p>Here both in outer and inner function the <code>this</code> points to the global window object.</p>
+</li>
+<li>
+<p>It's because in the outer function (arrow function) the <code>this</code> points to surrounding scope which is the global window object.</p>
+</li>
+<li>
+<p>And the inner function (regular function) is not being invoked by the object so <code>this</code> points to the global window object.</p>
+</li>
+<li>
+<p>Let's see what happens if we used an arrow function as inner function.</p>
+</li>
+</ul>
+<pre><code class="language-javascript">let obj = {
+
+    name: &quot;peter&quot;,
+    
+    showThisOuter() {
+
+        console.log(this); // object
+
+        let showThisInner=()=&gt; {
+            console.log(this); // object
+        }
+
+        showThisInner();
+
+    }
+}
+
+obj.showThisOuter();
+</code></pre>
+<ul>
+<li>
+<p>In both the outer and inner function the <code>this</code> points to the object.</p>
+</li>
+<li>
+<p>In the outer function (regular function) the <code>this</code> points to the object because the object is the one who is invoking the outer function.</p>
+</li>
+<li>
+<p>And the <code>this</code> in the inner function (arrow function) points to the surrounding scope which is the object.</p>
+</li>
+</ul>
+<h2>Changing the reference of <code>this</code></h2>
+<ul>
+<li>There are ways to change the reference of <code>this</code> using methods like call, apply and bind.</li>
+</ul>
+<pre><code class="language-javascript">let obj = {
+  name: &quot;peter&quot;
+}
+
+function displayThis(param1, param2) {
+  console.log(this === window); // true
+  console.log(this === obj); // false
+}
+
+displayThis();
+</code></pre>
+<ul>
+<li>
+<p>Here <code>this</code> points to global window object. If you want <code>this</code> to point to the object we can use any of the above three mentioned methods.</p>
+</li>
+<li>
+<p>Let's see all the methods one by one.</p>
+</li>
+</ul>
+<h3>Using call method</h3>
+<pre><code class="language-javascript">let obj = {
+  name: &quot;peter&quot;
+}
+
+function displayThis(param1, param2) {
+  console.log(this === window); // false
+  console.log(this === obj); // true
+  console.log(param1, param2); // a b
+}
+
+displayThis.call(obj, &quot;a&quot;, &quot;b&quot;);
+</code></pre>
+<ul>
+<li>
+<p>The call method makes <code>this</code> inside the function point to the object passed as first argument.</p>
+</li>
+<li>
+<p>And it takes the rest of the parameters of the function as seperate arguments.</p>
+</li>
+</ul>
+<h3>Using apply method</h3>
+<pre><code class="language-javascript">let obj = {
+  name: &quot;peter&quot;
+}
+
+function displayThis(param1, param2) {
+  console.log(this === window); // false
+  console.log(this === obj); //true
+  console.log(param1, param2); // a b
+}
+
+displayThis.apply(obj, [&quot;a&quot;, &quot;b&quot;]);
+</code></pre>
+<ul>
+<li>
+<p>The apply method is same as call it makes <code>this</code> inside the function point to the object passed as first argument.</p>
+</li>
+<li>
+<p>But it takes the parameters of the function as a single array passed as second argument.</p>
+</li>
+</ul>
+<h3>Using bind method</h3>
+<pre><code class="language-javascript">let obj = {
+  name: &quot;peter&quot;
+}
+
+function displayThis(param1, param2) {
+  console.log(this === window); // false
+  console.log(this === obj); // true
+  console.log(params); // [&quot;a&quot;,&quot;b&quot;]
+}
+
+let changedThis = displayThis.bind(obj, [&quot;a&quot;, &quot;b&quot;]);
+changedThis();
+</code></pre>
+<ul>
+<li>
+<p>The bind method makes <code>this</code> inside the function point to the object passed as first argument.</p>
+</li>
+<li>
+<p>It takes the parameters of the function as a single array passed as second argument.</p>
+</li>
+<li>
+<p>And it returns a function with above changes so that you can call them later.</p>
+</li>
+<li>
+<p><strong>Note that the above three methods call, apply and bind can not change the reference of <code>this</code> inside the arrow function.</strong></p>
+</li>
+</ul>
+<h2>Conclusion</h2>
+<ul>
+<li>
+<p>Here are few things to take away from this article</p>
+</li>
+<li>
+<ol>
+<li>In the global scope, <code>this</code> refers to the global window object.</li>
+</ol>
+</li>
+<li>
+<ol start="2">
+<li>In regular function the value of <code>this</code> is determined by who is invoking the function which is accessing <code>this</code>.</li>
+</ol>
+</li>
+<li>
+<ol start="3">
+<li>In arrow function the value of <code>this</code> is determined by the surrounding scope of the function which is accessing <code>this</code>.</li>
+</ol>
+</li>
+<li>
+<ol start="4">
+<li>We can change the reference of <code>this</code> using call, apply, and bind.</li>
+</ol>
+</li>
+<li>
+<ol start="5">
+<li>The call and apply can be used when you want to change the reference of <code>this</code> while calling the function.</li>
+</ol>
+</li>
+<li>
+<ol start="6">
+<li>The bind can be used when you want a separate function with modified reference of <code>this</code>.</li>
+</ol>
+</li>
+<li>
+<ol start="7">
+<li>You can not modify the reference of <code>this</code> for arrow functions.</li>
+</ol>
+</li>
+</ul>
+
+          </div>
+        </div>
+        <footer>
+      <div id="socialFooter">
+        <h4>
+          Made with
+          <img
+            id="heartIcon"
+            src="https://img.icons8.com/fluent/48/000000/like.png"
+          />
+          by Ganesh Kumar
+        </h4>
+        <a
+          href="https://mvganeshkumar.netlify.app"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            class="icons"
+            src="https://img.icons8.com/windows/64/000000/domain.png"
+            alt="website"
+          />
+        </a>
+        <a
+          href="https://github.com/Ganesh-Kumar6"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            class="icons"
+            src="https://img.icons8.com/fluent/48/000000/github.png"
+            alt="github"
+          />
+        </a>
+
+        <a
+          href="https://www.linkedin.com/in/ganesh-kumar6"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            class="icons"
+            src="https://img.icons8.com/fluent/48/000000/linkedin.png"
+            alt="linkedin"
+          />
+        </a>
+        <a href="https://dev.to/ganeshkumar6" 
+          target="_blank"
+          rel="noopener noreferrer">
+          <img
+            class="icons"
+            src="https://d2fltix0v2e0sb.cloudfront.net/dev-badge.svg"
+            alt="Ganesh Kumar's DEV Profile"
+          />
+        </a>
+      </div>
+      <a id="iconAttribution" href="https://icons8.com">Icons by Icons8</a>
+    </footer>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.4.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+    </body>
+</html>

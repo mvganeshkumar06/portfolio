@@ -114,6 +114,15 @@ pre {
   z-index: 0;
 }
 
+li code, h2 code, h3 code{
+  /* background-color: #d5e9ff; */
+  /* border-radius: 2px; */
+  /* padding: 1px 5px; */
+  /* color: #0000007e; */
+  font-style: italic;
+  font-weight: bold;
+}
+
 .icons:hover {
   box-shadow: 1px 1px 1px 1px rgb(104, 104, 104);
 }
