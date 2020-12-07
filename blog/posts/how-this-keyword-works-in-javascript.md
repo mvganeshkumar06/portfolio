@@ -259,16 +259,16 @@ changedThis();
 
 - Here are few things to take away from this article
 
-- 1. In the global scope, `this` refers to the global window object.
+- In the global scope, `this` refers to the global window object.
 
-- 2. In regular function the value of `this` is determined by who is invoking the function which is accessing `this`.
+- In regular function the value of `this` is determined by who is invoking the function which is accessing `this`.
 
-- 3. In arrow function the value of `this` is determined by the surrounding scope of the function which is accessing `this`.
+- In arrow function the value of `this` is determined by the surrounding scope of the function which is accessing `this`.
 
-- 4. We can change the reference of `this` using call, apply, and bind.
+- We can change the reference of `this` using call, apply, and bind.
 
-- 5. The call and apply can be used when you want to change the reference of `this` while calling the function.
+- The call and apply can be used when you want to change the reference of `this` while calling the function.
 
-- 6. The bind can be used when you want a separate function with modified reference of `this`.
+- The bind can be used when you want a separate function with modified reference of `this`.
 
-- 7. You can not modify the reference of `this` for arrow functions.
+- You can not modify the reference of `this` for arrow functions.
