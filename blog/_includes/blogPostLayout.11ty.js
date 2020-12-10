@@ -95,11 +95,11 @@ exports.render = ({ title, date, content }) => {
           <img
             class="icons"
             src="https://d2fltix0v2e0sb.cloudfront.net/dev-badge.svg"
-            alt="Ganesh Kumar's DEV Profile"
+            alt="dev"
           />
         </a>
       </div>
-      <a id="iconAttribution" href="https://icons8.com">Icons by Icons8</a>
+      <a id="iconAttribution" href="https://icons8.com" target="_blank">Icons by Icons8</a>
     </footer>
         <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.4.0/highlight.min.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
