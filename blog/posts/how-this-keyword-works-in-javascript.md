@@ -2,7 +2,7 @@
 permalink: "posts/how-this-keyword-works-in-javascript.html"
 permalinkBypassOutputDir: true
 layout: "blogPostLayout.11ty.js"
-title: How <em>this</em> keyword works in JavaScript
+title: How <code>this</code> keyword works in JavaScript
 date: 2020-12-06
 ---
 
@@ -237,7 +237,7 @@ let obj = {
   name: "peter"
 }
 
-function displayThis(param1, param2) {
+function displayThis(params) {
   console.log(this === window); // false
   console.log(this === obj); // true
   console.log(params); // ["a","b"]

@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta
+      name="description"
+      content="This is my personal portfolio which I use to showcase my contributions, projects and techinal experience"
+    />
+
+    <meta name="keywords" content="potfolio-app" />
+
+    <meta name="author" content="M.V.Ganesh Kumar" />
+
+    <title>Ganesh Kumar</title>
+
+    <link rel="stylesheet" href="../../../../css/blogPost.css" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.4.0/styles/vs.min.css">
+  </head>
+    <body>
+        <div id="navbarContainer">
+          <img id="profile" src="../../../../assets/profile.svg" alt="profile picture"/>
+          <p id="navText">GANESH KUMAR</p>
+          <ul id="navbar">
+            <a id="home" href="../../../../index.html">
+              <li>HOME</li>
+            </a>
+
+            <a id="projects" href="../../../../projects.html">
+              <li>PROJECTS</li>
+            </a>
+
+            <a id="blogs" href="../../../../blog.html">
+              <li>BLOGS</li>
+            </a>
+          </ul>
+        </div>
+        <div id="postContainer">
+          <div id="postItem"> 
+            <h1 id="title">JavaScript modules</h1>
+            <p id="date">13/12/2020</p>
+            <h2>Introduction</h2>
+<ul>
+<li>A module is a single script file that contains common pieces of reusable functionalities.</li>
+</ul>
+<h2>How to use modules</h2>
+<ul>
+<li>
+<p>Whenever you need some parts of the functionality from a module you can <code>export</code> from the module and <code>import</code> them into specific scripts where ever you need.</p>
+</li>
+<li>
+<p>There are different ways to export and import stuff in modules.</p>
+</li>
+<li>
+<p>Let us see them with some examples.</p>
+</li>
+<li>
+<p>In all the examples we are going to follow this directory structure.</p>
+</li>
+</ul>
+<pre><code class="language-plaintext">app.js - Where we import stuff
+module.js - Module from where we will export stuff
+</code></pre>
+<h2>Exporting modules</h2>
+<h3>Named export before declaration</h3>
+<pre><code class="language-javascript">// Inside module.js
+
+export let person=&quot;John&quot;;
+export function add(num1,num2){
+    return num1+num2;
+}
+</code></pre>
+<h3>Named export at the end of the script</h3>
+<pre><code class="language-javascript">// Inside module.js
+
+let person=&quot;John&quot;;
+function add(num1,num2){
+    return num1+num2;
+}
+
+export {person, add};
+</code></pre>
+<h3>Named export with alias</h3>
+<pre><code class="language-javascript">// Inside module.js
+
+let person=&quot;John&quot;;
+function add(num1,num2){
+    return num1+num2;
+}
+
+export {person as person1, add as add1};
+</code></pre>
+<h3>Default export before declaration</h3>
+<pre><code class="language-javascript">// Inside module.js
+
+export default function add(num1,num2){
+    return num1+num2;
+}
+</code></pre>
+<h3>Default export at the end of the script</h3>
+<pre><code class="language-javascript">// Inside module.js
+
+function add(num1,num2){
+    return num1+num2;
+}
+
+export default add;
+</code></pre>
+<h2>Importing modules</h2>
+<h3>Named import</h3>
+<pre><code class="language-javascript">// Inside app.js
+
+import { person, add } from './module.js';
+
+console.log(person); // John
+console.log(add(2, 3)); // 5
+</code></pre>
+<h3>Named import with alias</h3>
+<pre><code class="language-javascript">// Inside app.js
+
+import { person as person1, add as add1} from './module.js';
+
+console.log(person1); // John
+console.log(add1(2, 3)); // 5
+</code></pre>
+<h3>Default import</h3>
+<pre><code class="language-javascript">// Inside app.js
+
+import add from &quot;./module.js&quot;;
+
+console.log(add(2, 3)); // 5
+</code></pre>
+<h3>Import as object</h3>
+<pre><code class="language-javascript">// Inside app.js
+
+import * as fun from &quot;./module.js&quot;
+
+console.log(fun.person) // John
+console.log(fun.add(2,3)) // 5
+</code></pre>
+<h2>Rules to follow while working with modules</h2>
+<ul>
+<li>
+<p>Here are the rules that you have to follow to make sure that your modules work.</p>
+</li>
+<li>
+<p>Named export is used when you want to export multiple stuffs.</p>
+</li>
+<li>
+<p>Default export is used when you want to export only one stuff.</p>
+</li>
+<li>
+<p>If you are using named export you should use named import.</p>
+</li>
+<li>
+<p>Similarly if you are using default export you should use default import.</p>
+</li>
+</ul>
+<h2>Conclusion</h2>
+<ul>
+<li>
+<p>A module is just a script file that contains reusable pieces of code.</p>
+</li>
+<li>
+<p>There are different ways to export and import stuff from modules.</p>
+</li>
+<li>
+<p>Export - named, default, alias</p>
+</li>
+<li>
+<p>Import - named, default, alias, object</p>
+</li>
+</ul>
+
+          </div>
+        </div>
+        <footer>
+      <div id="socialFooter">
+        <h4>
+          Made with
+          <img
+            id="heartIcon"
+            src="https://img.icons8.com/fluent/48/000000/like.png"
+          />
+          by Ganesh Kumar
+        </h4>
+        <a
+          href="https://mvganeshkumar.netlify.app"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            class="icons"
+            src="https://img.icons8.com/windows/64/000000/domain.png"
+            alt="website"
+          />
+        </a>
+        <a
+          href="https://github.com/Ganesh-Kumar6"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            class="icons"
+            src="https://img.icons8.com/fluent/48/000000/github.png"
+            alt="github"
+          />
+        </a>
+
+        <a
+          href="https://www.linkedin.com/in/ganesh-kumar6"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            class="icons"
+            src="https://img.icons8.com/fluent/48/000000/linkedin.png"
+            alt="linkedin"
+          />
+        </a>
+        <a href="https://dev.to/ganeshkumar6" 
+          target="_blank"
+          rel="noopener noreferrer">
+          <img
+            class="icons"
+            src="https://d2fltix0v2e0sb.cloudfront.net/dev-badge.svg"
+            alt="dev"
+          />
+        </a>
+      </div>
+      <a id="iconAttribution" href="https://icons8.com" target="_blank">Icons by Icons8</a>
+    </footer>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.4.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+    </body>
+</html>

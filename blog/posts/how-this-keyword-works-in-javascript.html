@@ -39,7 +39,7 @@
         </div>
         <div id="postContainer">
           <div id="postItem"> 
-            <h1 id="title">How <em>this</em> keyword works in JavaScript</h1>
+            <h1 id="title">How <code>this</code> keyword works in JavaScript</h1>
             <p id="date">6/12/2020</p>
             <h2>Introduction</h2>
 <ul>
@@ -301,7 +301,7 @@ displayThis.apply(obj, [&quot;a&quot;, &quot;b&quot;]);
   name: &quot;peter&quot;
 }
 
-function displayThis(param1, param2) {
+function displayThis(params) {
   console.log(this === window); // false
   console.log(this === obj); // true
   console.log(params); // [&quot;a&quot;,&quot;b&quot;]
@@ -330,39 +330,25 @@ changedThis();
 <p>Here are few things to take away from this article</p>
 </li>
 <li>
-<ol>
-<li>In the global scope, <code>this</code> refers to the global window object.</li>
-</ol>
+<p>In the global scope, <code>this</code> refers to the global window object.</p>
 </li>
 <li>
-<ol start="2">
-<li>In regular function the value of <code>this</code> is determined by who is invoking the function which is accessing <code>this</code>.</li>
-</ol>
+<p>In regular function the value of <code>this</code> is determined by who is invoking the function which is accessing <code>this</code>.</p>
 </li>
 <li>
-<ol start="3">
-<li>In arrow function the value of <code>this</code> is determined by the surrounding scope of the function which is accessing <code>this</code>.</li>
-</ol>
+<p>In arrow function the value of <code>this</code> is determined by the surrounding scope of the function which is accessing <code>this</code>.</p>
 </li>
 <li>
-<ol start="4">
-<li>We can change the reference of <code>this</code> using call, apply, and bind.</li>
-</ol>
+<p>We can change the reference of <code>this</code> using call, apply, and bind.</p>
 </li>
 <li>
-<ol start="5">
-<li>The call and apply can be used when you want to change the reference of <code>this</code> while calling the function.</li>
-</ol>
+<p>The call and apply can be used when you want to change the reference of <code>this</code> while calling the function.</p>
 </li>
 <li>
-<ol start="6">
-<li>The bind can be used when you want a separate function with modified reference of <code>this</code>.</li>
-</ol>
+<p>The bind can be used when you want a separate function with modified reference of <code>this</code>.</p>
 </li>
 <li>
-<ol start="7">
-<li>You can not modify the reference of <code>this</code> for arrow functions.</li>
-</ol>
+<p>You can not modify the reference of <code>this</code> for arrow functions.</p>
 </li>
 </ul>
 
@@ -418,11 +404,11 @@ changedThis();
           <img
             class="icons"
             src="https://d2fltix0v2e0sb.cloudfront.net/dev-badge.svg"
-            alt="Ganesh Kumar's DEV Profile"
+            alt="dev"
           />
         </a>
       </div>
-      <a id="iconAttribution" href="https://icons8.com">Icons by Icons8</a>
+      <a id="iconAttribution" href="https://icons8.com" target="_blank">Icons by Icons8</a>
     </footer>
         <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.4.0/highlight.min.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
