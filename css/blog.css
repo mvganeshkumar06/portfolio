@@ -66,7 +66,6 @@ a:hover {
 
 #blogContainer {
   width: 100vw;
-  height: 70vh;
   margin: 80px 0px 50px 0px;
   padding: 10px;
   display: flex;
@@ -85,10 +84,13 @@ a:hover {
 }
 
 .icons:hover {
-  box-shadow: 1px 1px 1px 1px rgb(104, 104, 104);
+  box-shadow: 1px 1px 1px 1px rgb(0, 0, 0);
 }
 
 footer {
+  position: absolute;
+  bottom: 0;
+  margin-top: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
