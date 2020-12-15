@@ -2,7 +2,7 @@
 permalink: "posts/modules-in-javascript.html"
 permalinkBypassOutputDir: true
 layout: "blogPostLayout.11ty.js"
-title: JavaScript modules
+title: Modules in JavaScript
 date: 2020-12-13
 ---
 
@@ -32,9 +32,9 @@ module.js - Module from where we will export stuff
 ```javascript
 // Inside module.js
 
-export let person="John";
-export function add(num1,num2){
-    return num1+num2;
+export let person = "John";
+export function add(num1, num2) {
+  return num1 + num2;
 }
 ```
 
@@ -43,12 +43,12 @@ export function add(num1,num2){
 ```javascript
 // Inside module.js
 
-let person="John";
-function add(num1,num2){
-    return num1+num2;
+let person = "John";
+function add(num1, num2) {
+  return num1 + num2;
 }
 
-export {person, add};
+export { person, add };
 ```
 
 ### Named export with alias
@@ -56,12 +56,12 @@ export {person, add};
 ```javascript
 // Inside module.js
 
-let person="John";
-function add(num1,num2){
-    return num1+num2;
+let person = "John";
+function add(num1, num2) {
+  return num1 + num2;
 }
 
-export {person as person1, add as add1};
+export { person as person1, add as add1 };
 ```
 
 ### Default export before declaration
@@ -69,8 +69,8 @@ export {person as person1, add as add1};
 ```javascript
 // Inside module.js
 
-export default function add(num1,num2){
-    return num1+num2;
+export default function add(num1, num2) {
+  return num1 + num2;
 }
 ```
 
@@ -79,8 +79,8 @@ export default function add(num1,num2){
 ```javascript
 // Inside module.js
 
-function add(num1,num2){
-    return num1+num2;
+function add(num1, num2) {
+  return num1 + num2;
 }
 
 export default add;
@@ -88,12 +88,12 @@ export default add;
 
 ## Importing modules
 
-### Named import 
+### Named import
 
 ```javascript
 // Inside app.js
 
-import { person, add } from './module.js';
+import { person, add } from "./module.js";
 
 console.log(person); // John
 console.log(add(2, 3)); // 5
@@ -104,13 +104,13 @@ console.log(add(2, 3)); // 5
 ```javascript
 // Inside app.js
 
-import { person as person1, add as add1} from './module.js';
+import { person as person1, add as add1 } from "./module.js";
 
 console.log(person1); // John
 console.log(add1(2, 3)); // 5
 ```
 
-### Default import 
+### Default import
 
 ```javascript
 // Inside app.js
@@ -125,10 +125,10 @@ console.log(add(2, 3)); // 5
 ```javascript
 // Inside app.js
 
-import * as fun from "./module.js"
+import * as fun from "./module.js";
 
-console.log(fun.person) // John
-console.log(fun.add(2,3)) // 5
+console.log(fun.person); // John
+console.log(fun.add(2, 3)); // 5
 ```
 
 ## Rules to follow while working with modules
