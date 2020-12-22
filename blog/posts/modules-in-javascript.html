@@ -39,7 +39,7 @@
         </div>
         <div id="postContainer">
           <div id="postItem"> 
-            <h1 id="title">JavaScript modules</h1>
+            <h1 id="title">Modules in JavaScript</h1>
             <p id="date">13/12/2020</p>
             <h2>Introduction</h2>
 <ul>
@@ -67,43 +67,43 @@ module.js - Module from where we will export stuff
 <h3>Named export before declaration</h3>
 <pre><code class="language-javascript">// Inside module.js
 
-export let person=&quot;John&quot;;
-export function add(num1,num2){
-    return num1+num2;
+export let person = &quot;John&quot;;
+export function add(num1, num2) {
+  return num1 + num2;
 }
 </code></pre>
 <h3>Named export at the end of the script</h3>
 <pre><code class="language-javascript">// Inside module.js
 
-let person=&quot;John&quot;;
-function add(num1,num2){
-    return num1+num2;
+let person = &quot;John&quot;;
+function add(num1, num2) {
+  return num1 + num2;
 }
 
-export {person, add};
+export { person, add };
 </code></pre>
 <h3>Named export with alias</h3>
 <pre><code class="language-javascript">// Inside module.js
 
-let person=&quot;John&quot;;
-function add(num1,num2){
-    return num1+num2;
+let person = &quot;John&quot;;
+function add(num1, num2) {
+  return num1 + num2;
 }
 
-export {person as person1, add as add1};
+export { person as person1, add as add1 };
 </code></pre>
 <h3>Default export before declaration</h3>
 <pre><code class="language-javascript">// Inside module.js
 
-export default function add(num1,num2){
-    return num1+num2;
+export default function add(num1, num2) {
+  return num1 + num2;
 }
 </code></pre>
 <h3>Default export at the end of the script</h3>
 <pre><code class="language-javascript">// Inside module.js
 
-function add(num1,num2){
-    return num1+num2;
+function add(num1, num2) {
+  return num1 + num2;
 }
 
 export default add;
@@ -112,7 +112,7 @@ export default add;
 <h3>Named import</h3>
 <pre><code class="language-javascript">// Inside app.js
 
-import { person, add } from './module.js';
+import { person, add } from &quot;./module.js&quot;;
 
 console.log(person); // John
 console.log(add(2, 3)); // 5
@@ -120,7 +120,7 @@ console.log(add(2, 3)); // 5
 <h3>Named import with alias</h3>
 <pre><code class="language-javascript">// Inside app.js
 
-import { person as person1, add as add1} from './module.js';
+import { person as person1, add as add1 } from &quot;./module.js&quot;;
 
 console.log(person1); // John
 console.log(add1(2, 3)); // 5
@@ -135,10 +135,10 @@ console.log(add(2, 3)); // 5
 <h3>Import as object</h3>
 <pre><code class="language-javascript">// Inside app.js
 
-import * as fun from &quot;./module.js&quot;
+import * as fun from &quot;./module.js&quot;;
 
-console.log(fun.person) // John
-console.log(fun.add(2,3)) // 5
+console.log(fun.person); // John
+console.log(fun.add(2, 3)); // 5
 </code></pre>
 <h2>Rules to follow while working with modules</h2>
 <ul>

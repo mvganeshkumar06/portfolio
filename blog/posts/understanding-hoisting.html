@@ -1,0 +1,390 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta
+      name="description"
+      content="This is my personal portfolio which I use to showcase my contributions, projects and techinal experience"
+    />
+
+    <meta name="keywords" content="potfolio-app" />
+
+    <meta name="author" content="M.V.Ganesh Kumar" />
+
+    <title>Ganesh Kumar</title>
+
+    <link rel="stylesheet" href="../../../../css/blogPost.css" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.4.0/styles/vs.min.css">
+  </head>
+    <body>
+        <div id="navbarContainer">
+          <img id="profile" src="../../../../assets/profile.svg" alt="profile picture"/>
+          <p id="navText">GANESH KUMAR</p>
+          <ul id="navbar">
+            <a id="home" href="../../../../index.html">
+              <li>HOME</li>
+            </a>
+
+            <a id="projects" href="../../../../projects.html">
+              <li>PROJECTS</li>
+            </a>
+
+            <a id="blogs" href="../../../../blog.html">
+              <li>BLOGS</li>
+            </a>
+          </ul>
+        </div>
+        <div id="postContainer">
+          <div id="postItem"> 
+            <h1 id="title">Understanding hoisting</h1>
+            <p id="date">22/12/2020</p>
+            <h2>Introduction</h2>
+<ul>
+<li>Before trying to understand what is hoisting and how it works we have to understand how the JavaScript code is read and executed because it is where the core idea of hoisting lies.</li>
+</ul>
+<h2>JavaScript Engine</h2>
+<ul>
+<li>
+<p>You can run your JavaScript code either inside a browser or inside Node (it's a JavaScript environment that enables you to use JavaScript outside the browser).</p>
+</li>
+<li>
+<p>Different browsers have their JavaScript engine for example Chrome has V8, Mozilla has Spider Monkey, etc.</p>
+</li>
+<li>
+<p>For Node the engine is built on top of V8.</p>
+</li>
+<li>
+<p>These JavaScript engines are the one that reads and executes your JavaScript code.</p>
+</li>
+<li>
+<p>Let's see how the JavaScript engine executes your code using execution context.</p>
+</li>
+</ul>
+<h2>Execution context</h2>
+<ul>
+<li>
+<p>Everything in JavaScript happens inside an execution context.</p>
+</li>
+<li>
+<p>It is just a container where all your code is executed.</p>
+</li>
+<li>
+<p>There are two phases that take place in the execution context.</p>
+<ol>
+<li>
+<p>The memory creation or allocation phase.</p>
+</li>
+<li>
+<p>The code execution phase.</p>
+</li>
+</ol>
+</li>
+</ul>
+<h3>Memory allocation phase</h3>
+<ul>
+<li>
+<p>In this phase, the JavaScript engine goes through your code and allocates some memory for all the variables and functions.</p>
+</li>
+<li>
+<p>The variables will have a placeholder value called undefined.</p>
+</li>
+<li>
+<p>Value assignment, function calls, etc will not take place in this phase.</p>
+</li>
+</ul>
+<h3>Code execution phase</h3>
+<ul>
+<li>
+<p>In this phase, the JavaScript engine reads your code line by line and assigns the values for the variables, and executes the function calls.</p>
+</li>
+<li>
+<p>When a function call is encountered a brand new execution context is created inside the current execution context.</p>
+</li>
+<li>
+<p><strong>Note that the first execution context that is created is also called as <code>global execution context</code>.</strong></p>
+</li>
+<li>
+<p>Now we have a separate execution context for a function call inside our global execution context.</p>
+</li>
+<li>
+<p>Again the memory allocation and code execution phase will take place but now it takes place for the particular function call.</p>
+</li>
+<li>
+<p>Once the function execution is over the execution context for that particular function gets deleted along with all the variables and other function calls inside it.</p>
+</li>
+</ul>
+<h2>The call stack</h2>
+<ul>
+<li>
+<p>Since our code can have a lot of function calls there will be a lot of execution contexts created.</p>
+</li>
+<li>
+<p>The order in which the execution context should be created and deleted is taken care of by the call stack.</p>
+</li>
+<li>
+<p><strong>Note that stack is a linear data structure where you can add or remove elements only at the top of the stack.</strong></p>
+</li>
+<li>
+<p>Initially, the global execution context is pushed onto the stack.</p>
+</li>
+<li>
+<p>Then whenever execution context for a function call is created, it will be pushed on top of the global execution context in the call stack.</p>
+</li>
+<li>
+<p>When the function execution is finished the particular execution context will be removed from the call stack.</p>
+</li>
+</ul>
+<h2>Visualising execution context and call stack</h2>
+<ul>
+<li>Let us take an example to visualize the execution context and call stack.</li>
+</ul>
+<pre><code class="language-javascript">var name=&quot;John&quot;;
+
+function greet(){
+    var surname=&quot;Smith&quot;;
+    console.log(`Hello ${name} ${surname}`);
+}
+
+greet(); // Hello John Smith
+</code></pre>
+<ul>
+<li>Now let us see how the creation and deletion of the execution contexts take place for the above program.</li>
+</ul>
+<p style="text-align:center"><img src="../../assets/execution_context_A.jpg" alt="execution context"></p>
+<ul>
+<li>The image <code>A</code> shows the state of the global execution context after the memory allocation phase of the program.</li>
+</ul>
+<p style="text-align:center"><img src="../../assets/execution_context_B.jpg" alt="execution context"></p>
+<ul>
+<li>
+<p>The image <code>B</code> shows the state of the global execution context during the code execution phase of the program.</p>
+</li>
+<li>
+<p>During this phase another execution context for the greet function is created inside the global execution context and the memory allocation phase of the inner execution context takes place.</p>
+</li>
+</ul>
+<p style="text-align:center"><img src="../../assets/execution_context_C.jpg" alt="execution context"></p>
+<ul>
+<li>
+<p>The image <code>C</code> shows the state of the global execution context after the code execution is done for the inner execution context.</p>
+</li>
+<li>
+<p>During this time the output <code>Hello John Smith</code> is logged on the console.</p>
+</li>
+</ul>
+<p style="text-align:center"><img src="../../assets/execution_context_D.jpg" alt="execution context"></p>
+<ul>
+<li>
+<p>The image <code>D</code> shows the state of the global execution context
+after the inner execution context is deleted as the greet function is done with its execution.</p>
+</li>
+<li>
+<p>Let us see how the call stack changes for the above program.</p>
+</li>
+</ul>
+<p style="text-align:center"><img src="../../assets/call_stack.jpg" alt="call stack"></p>
+<ul>
+<li>
+<p>Initially, the global execution context is pushed on the call stack.</p>
+</li>
+<li>
+<p>After the function call, the inner execution context is created and pushed on top of the global execution context.</p>
+</li>
+<li>
+<p>Once the function execution gets over the inner execution context is removed from the call stack.</p>
+</li>
+</ul>
+<h2>Hoisting</h2>
+<ul>
+<li>
+<p>After understanding how JavaScript code execution takes place, now we can easily understand hoisting.</p>
+</li>
+<li>
+<p>Hoisting is the concept where we can access the variables and function even before we have declared them.</p>
+</li>
+<li>
+<p>Let's see how it works based on what we have learned before.</p>
+</li>
+<li>
+<p>When we try to access a variable or a function we will be in the code execution phase by that time the memory would have been already allocated right?</p>
+</li>
+<li>
+<p>It is because the memory allocation phase comes before code execution.</p>
+</li>
+<li>
+<p>Now since the memory is already allocated for all the variables and functions, if you try to access them before declaration (in your code) the variables will have a value of undefined and the function calls would be executed normally.</p>
+</li>
+<li>
+<p>This is what hoisting is all about. Now let us see some examples to understand hoisting better.</p>
+</li>
+</ul>
+<h3>Hoisting variables</h3>
+<ul>
+<li>
+<p>There are three ways to create variables var, let, and const.</p>
+</li>
+<li>
+<p>Variables created using var, let, and const all are hoisted but you will be able to access only the variable created using var before declaration.</p>
+</li>
+</ul>
+<pre><code class="language-javascript">console.log(name); // undefined
+var name=&quot;John&quot;;
+</code></pre>
+<ul>
+<li>In the above code the variable is created using var, it will be hoisted and you will be able to access the variable before declaration.</li>
+</ul>
+<pre><code class="language-javascript">console.log(name); // ReferenceError: Cannot access 'name' before initialization
+let name = &quot;John&quot;;
+</code></pre>
+<pre><code class="language-javascript">console.log(name); // ReferenceError: Cannot access 'name' before initialization
+const name = &quot;John&quot;;
+</code></pre>
+<ul>
+<li>
+<p>In the above code the variables are created using let and const, they will be hoisted but you will not be able to access them before declaration.</p>
+</li>
+<li>
+<p>These variables are said to be in the <code>temporal dead zone</code> (it is the time between hoisting of the variable and its initialization).</p>
+</li>
+<li>
+<p>During this zone you will not be able to access the variables.</p>
+</li>
+<li>
+<p>Simply put you will be able to access the variables created using let and const only after initialization.</p>
+</li>
+<li>
+<p>Refer <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let#Temporal_dead_zone_TDZ" alt="mdn doc about temporal dead zone" target="_blank">this mdn doc</a> to know more about the <code>temporal dead zone</code>.</p>
+</li>
+</ul>
+<h3>Hoisting functions</h3>
+<ul>
+<li>
+<p>There are two types of function, regular and arrow function.</p>
+</li>
+<li>
+<p>Only the regular functions are hoisted, arrow functions will not be hoisted.</p>
+</li>
+</ul>
+<pre><code class="language-javascript">greet() // Hello there
+function greet(){
+    console.log(&quot;Hello there&quot;);
+}
+</code></pre>
+<ul>
+<li>In the above code the greet is a regular function and it will be hoisted so we will be able to access it before declaration.</li>
+</ul>
+<pre><code class="language-javascript">greet() // TypeError: greet is not a function
+var greet=()=&gt;{
+    console.log(&quot;Hello there&quot;);
+}
+</code></pre>
+<ul>
+<li>
+<p>In the above code the greet is an arrow function and it is stored in a variable.</p>
+</li>
+<li>
+<p>After the memory allocation phase the variable greet will have a value of undefined so when you try to access it before declaration you will get a type error.</p>
+</li>
+<li>
+<p><strong>Note that if you use let or const for arrow function the same output will be produced.</strong></p>
+</li>
+</ul>
+<h2>Conclusion</h2>
+<ul>
+<li>
+<p>JavaScript engine reads and executes your JavaScript code.</p>
+</li>
+<li>
+<p>Everything in JavaScript takes place in an execution context.</p>
+</li>
+<li>
+<p>There are two phases that take place in the execution context the memory allocation followed by the code execution.</p>
+</li>
+<li>
+<p>Every function call will create another brand new execution context.</p>
+</li>
+<li>
+<p>The order of creation and deletion of execution contexts is taken care by the call stack.</p>
+</li>
+<li>
+<p>Hoisting is the ability to access variables and functions even before declaration (in your code).</p>
+</li>
+<li>
+<p>Hoisting is possible because the memory allocation phase would have been completed by the time the code is being executed.</p>
+</li>
+<li>
+<p>Only those variables created using var is accessible before declaration, variables created using let and const are not accessible in the temporal dead zone.</p>
+</li>
+<li>
+<p>Only regular functions are hoisted, arrow functions are not hoisted.</p>
+</li>
+<li>
+<p>In general, you should access variables and functions only after declaring them to avoid any errors.</p>
+</li>
+</ul>
+
+          </div>
+        </div>
+        <footer>
+      <div id="socialFooter">
+        <h4>
+          Made with
+          <img
+            id="heartIcon"
+            src="https://img.icons8.com/fluent/48/000000/like.png"
+          />
+          by Ganesh Kumar
+        </h4>
+        <a
+          href="https://mvganeshkumar.netlify.app"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            class="icons"
+            src="https://img.icons8.com/windows/64/000000/domain.png"
+            alt="website"
+          />
+        </a>
+        <a
+          href="https://github.com/Ganesh-Kumar6"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            class="icons"
+            src="https://img.icons8.com/fluent/48/000000/github.png"
+            alt="github"
+          />
+        </a>
+
+        <a
+          href="https://www.linkedin.com/in/ganesh-kumar6"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            class="icons"
+            src="https://img.icons8.com/fluent/48/000000/linkedin.png"
+            alt="linkedin"
+          />
+        </a>
+        <a href="https://dev.to/ganeshkumar6" 
+          target="_blank"
+          rel="noopener noreferrer">
+          <img
+            class="icons"
+            src="https://d2fltix0v2e0sb.cloudfront.net/dev-badge.svg"
+            alt="dev"
+          />
+        </a>
+      </div>
+      <a id="iconAttribution" href="https://icons8.com" target="_blank">Icons by Icons8</a>
+    </footer>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.4.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+    </body>
+</html>
