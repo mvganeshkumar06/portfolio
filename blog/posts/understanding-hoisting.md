@@ -88,30 +88,30 @@ greet(); // Hello John Smith
 
 - Now let us see how the creation and deletion of the execution contexts take place for the above program.
 
-<p style="text-align:center"><img src="../../assets/execution_context_A.jpg" alt="execution context"></p>
+<p style="text-align:center"><img src="../../assets/execution-context-A.jpg" alt="execution context"></p>
 
 - The image `A` shows the state of the global execution context after the memory allocation phase of the program.
 
-<p style="text-align:center"><img src="../../assets/execution_context_B.jpg" alt="execution context"></p>
+<p style="text-align:center"><img src="../../assets/execution-context-B.jpg" alt="execution context"></p>
 
 - The image `B` shows the state of the global execution context during the code execution phase of the program.
 
 - During this phase another execution context for the greet function is created inside the global execution context and the memory allocation phase of the inner execution context takes place.
 
-<p style="text-align:center"><img src="../../assets/execution_context_C.jpg" alt="execution context"></p>
+<p style="text-align:center"><img src="../../assets/execution-context-C.jpg" alt="execution context"></p>
 
 - The image `C` shows the state of the global execution context after the code execution is done for the inner execution context.
 
 - During this time the output `Hello John Smith` is logged on the console.
 
-<p style="text-align:center"><img src="../../assets/execution_context_D.jpg" alt="execution context"></p>
+<p style="text-align:center"><img src="../../assets/execution-context-D.jpg" alt="execution context"></p>
 
 - The image `D` shows the state of the global execution context 
 after the inner execution context is deleted as the greet function is done with its execution.
 
 - Let us see how the call stack changes for the above program.
 
-<p style="text-align:center"><img src="../../assets/call_stack.jpg" alt="call stack"></p>
+<p style="text-align:center"><img src="../../assets/call-stack.jpg" alt="call stack"></p>
 
 - Initially, the global execution context is pushed on the call stack.
 
