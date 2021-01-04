@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta
+      name="description"
+      content="This is my personal portfolio which I use to showcase my contributions, projects and techinal experience"
+    />
+
+    <meta name="keywords" content="potfolio-app" />
+
+    <meta name="author" content="M.V.Ganesh Kumar" />
+
+    <title>Ganesh Kumar</title>
+
+    <link rel="stylesheet" href="../../../../css/blogPost.css" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.4.0/styles/vs.min.css">
+  </head>
+    <body>
+        <div id="navbarContainer">
+          <img id="profile" src="../../../../assets/profile.svg" alt="profile picture"/>
+          <p id="navText">GANESH KUMAR</p>
+          <ul id="navbar">
+            <a id="home" href="../../../../index.html">
+              <li>HOME</li>
+            </a>
+
+            <a id="projects" href="../../../../projects.html">
+              <li>PROJECTS</li>
+            </a>
+
+            <a id="blogs" href="../../../../blog.html">
+              <li>BLOGS</li>
+            </a>
+          </ul>
+        </div>
+        <div id="postContainer">
+          <div id="postItem"> 
+            <h1 id="title">Understanding closures</h1>
+            <p id="date">4/1/2021</p>
+            <h2>Introduction</h2>
+<ul>
+<li>Before trying to understand what are closures and how it works we have to understand what is scope, lexical environment, scope chain, and how they work.</li>
+</ul>
+<h2>Scope</h2>
+<ul>
+<li>
+<p>Everything that is present in the current execution context is said to be in the current scope.</p>
+</li>
+<li>
+<p><strong>Note if you don't know what an execution context is and how JavaScript reads and executes code, I highly recommend you to read my previous post <a href="https://mvganeshkumar.netlify.app/blog/posts/understanding-hoisting.html" title="Understanding Hoisting">here</a>.</strong></p>
+</li>
+<li>
+<p>Let's take an example to understand the scope.</p>
+</li>
+</ul>
+<pre><code class="language-javascript">let name=&quot;John&quot;;
+
+function greet(){
+    let surname=&quot;Smith&quot;;
+    console.log(`Welcome ${name} ${surname}`);
+}
+
+greet(); // Welcome John Smith
+</code></pre>
+<ul>
+<li>
+<p>During the execution of the above code, a global execution context is created and pushed onto the call stack.</p>
+</li>
+<li>
+<p>The global execution context contains the variable name with the value of John.</p>
+</li>
+<li>
+<p>When the greet function is invoked a new local execution context is created and push on top of the global execution context.</p>
+</li>
+<li>
+<p>This local execution context contains the variable surname with a value Smith.</p>
+</li>
+<li>
+<p>Now the surname is said to have a <code>local scope</code> or in other words, the scope of surname is inside the greet function.</p>
+</li>
+<li>
+<p>This is because the surname is available only inside the local execution context created by the greet function and it will accessible only inside this function.</p>
+</li>
+<li>
+<p>Also the variable name is said to have a <code>global scope</code> or in other words, the scope of name is global.</p>
+</li>
+<li>
+<p>This is because the variable name is available inside the global execution context and it will accessible everywhere.</p>
+</li>
+</ul>
+<h2>Lexical environment</h2>
+<ul>
+<li>
+<p>Whenever an execution context is created a lexical environment is also created.</p>
+</li>
+<li>
+<p>A lexical environment is the execution context along with the reference to the lexical environment of the parent execution context.</p>
+</li>
+<li>
+<p>Think of it as a container that consists of the current execution context and a reference to the lexical environment of the parent execution context.</p>
+</li>
+<li>
+<p>We'll see a visual example of how the lexical environment works using the below code.</p>
+</li>
+</ul>
+<pre><code class="language-javascript">function introduce(){
+
+    let name=&quot;John&quot;;
+
+    function greet(){
+        let surname=&quot;Smith&quot;;
+        console.log(`Welcome ${name} ${surname}`);
+    }
+
+    return greet;
+}
+
+let welcome = introduce(); 
+
+welcome() // Welcome John Smith
+</code></pre>
+<ul>
+<li>Below is the representation of the lexical environments formed during the execution of the above code.</li>
+</ul>
+<p style="text-align:center"><img src="../../assets/lexical-environment.jpg" alt="lexical environment"></p>
+<ul>
+<li>
+<p>The first container is the lexical environment for the greet function.</p>
+</li>
+<li>
+<p>It consists of a local execution context where the variable surname exists and it has a reference to the parent lexical environment which is for the introduce function.</p>
+</li>
+<li>
+<p>The lexical environment of the introduce function contains the variable name and the function greet.</p>
+</li>
+<li>
+<p>It also has a reference to its parent which is the global lexical environment.</p>
+</li>
+<li>
+<p>The global lexical environment contains the variable welcome and it has a reference to its parent which is null.</p>
+</li>
+</ul>
+<h2>Scope chain</h2>
+<ul>
+<li>
+<p>The above image representing multiple lexical environments linked together by references is what is called the scope chain.</p>
+</li>
+<li>
+<p>Whenever you are trying to access a variable, the JavaScript engine searches for that variable in the current scope.</p>
+</li>
+<li>
+<p>If it is not found it uses the reference in the lexical environment and moves a level above in the scope chain and searches for the variable in the parent scope.</p>
+</li>
+<li>
+<p>This is repeated until the variable is found or the scope chain is exhausted.</p>
+</li>
+<li>
+<p>This is the role of the scope chain.</p>
+</li>
+<li>
+<p>Now that we have covered the required prerequisites let us look at closures.</p>
+</li>
+</ul>
+<h2>Closures</h2>
+<ul>
+<li>
+<p>A lexical environment is what is called as closure or in other words it is referred to as a function bundled together along with the surrounding scope.</p>
+</li>
+<li>
+<p>Since a closure is just a lexical environment every function in JavaScript forms a closure.</p>
+</li>
+<li>
+<p>Let's see the same example again to understand closures.</p>
+</li>
+</ul>
+<pre><code class="language-javascript">function introduce(){
+
+    let name=&quot;John&quot;;
+
+    function greet(){
+        let surname=&quot;Smith&quot;;
+        console.log(`Welcome ${name} ${surname}`);
+    }
+
+    return greet;
+}
+
+let welcome = introduce(); 
+
+welcome() // Welcome John Smith
+</code></pre>
+<ul>
+<li>
+<p>Here the function greet forms a closure.</p>
+</li>
+<li>
+<p>It will have access to all the variables present inside the current scope as well as in the parent scope even after the parent function has finished its execution.</p>
+</li>
+<li>
+<p>Generally, when a function is done with its execution all the memory will be removed or garbage collected in order to save memory.</p>
+</li>
+<li>
+<p>But here due to closure when invoking the function welcome the greet function will be executed and it will still have access to the variable name even after the function introduce is done with its execution.</p>
+</li>
+</ul>
+<h2>What is the use of closures</h2>
+<ul>
+<li>
+<p>One of the main use of closures is to have data privacy where the variables inside the outer function will be accessible only by the inner function.</p>
+</li>
+<li>
+<p>In the above case the variable name is private and only the greet function can access it.</p>
+</li>
+<li>
+<p>This is because the greet function is returned and when it is invoked later it still remembers the variable name due to closures.</p>
+</li>
+<li>
+<p><strong>Note that closures may lead to memory wastage as the variables that are present in the outer function will not be removed even after the execution of the outer function.</strong></p>
+</li>
+<li>
+<p>But modern JavaScript engines like V8 tend to optimize this and they remove those variables that are not reachable by any reference.</p>
+</li>
+</ul>
+<h2>Conclusion</h2>
+<ul>
+<li>
+<p>A scope refers to the variable and functions present in the current execution context.</p>
+</li>
+<li>
+<p>A lexical environment is the current execution context along with the reference of the parent lexical environment.</p>
+</li>
+<li>
+<p>It is created whenever an execution context is created.</p>
+</li>
+<li>
+<p>A scope chain is the chain of multiple lexical environments linked together by references.</p>
+</li>
+<li>
+<p>JavaScript engine uses the scope chain to identify whether the variable is accessible or not.</p>
+</li>
+<li>
+<p>A closure is just a lexical environment or in other words, it is a function bundled together along with the surrounding scope.</p>
+</li>
+</ul>
+
+          </div>
+        </div>
+        <footer>
+      <div id="socialFooter">
+        <h4>
+          Made with
+          <img
+            id="heartIcon"
+            src="https://img.icons8.com/fluent/48/000000/like.png"
+          />
+          by Ganesh Kumar
+        </h4>
+        <a
+          href="https://mvganeshkumar.netlify.app"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            class="icons"
+            src="https://img.icons8.com/windows/64/000000/domain.png"
+            alt="website"
+          />
+        </a>
+        <a
+          href="https://github.com/Ganesh-Kumar6"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            class="icons"
+            src="https://img.icons8.com/fluent/48/000000/github.png"
+            alt="github"
+          />
+        </a>
+
+        <a
+          href="https://www.linkedin.com/in/ganesh-kumar6"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            class="icons"
+            src="https://img.icons8.com/fluent/48/000000/linkedin.png"
+            alt="linkedin"
+          />
+        </a>
+        <a href="https://dev.to/ganeshkumar6" 
+          target="_blank"
+          rel="noopener noreferrer">
+          <img
+            class="icons"
+            src="https://d2fltix0v2e0sb.cloudfront.net/dev-badge.svg"
+            alt="dev"
+          />
+        </a>
+      </div>
+      <a id="iconAttribution" href="https://icons8.com" target="_blank">Icons by Icons8</a>
+    </footer>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.4.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+    </body>
+</html>
