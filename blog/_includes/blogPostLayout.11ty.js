@@ -67,7 +67,7 @@ exports.render = ({ title, date, content }) => {
           />
         </a>
         <a
-          href="https://github.com/Ganesh-Kumar6"
+          href="https://github.com/mvganeshkumar06"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -79,7 +79,7 @@ exports.render = ({ title, date, content }) => {
         </a>
 
         <a
-          href="https://www.linkedin.com/in/ganesh-kumar6"
+          href="https://www.linkedin.com/in/mvganeshkumar06"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -89,7 +89,18 @@ exports.render = ({ title, date, content }) => {
             alt="linkedin"
           />
         </a>
-        <a href="https://dev.to/ganeshkumar6" 
+        <a
+          href="https://twitter.com/mvganeshkumar06"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            class="icons"
+            src="https://img.icons8.com/fluent/48/000000/twitter.png"
+            alt="twitter"
+          />
+        </a>
+        <a href="https://dev.to/mvganeshkumar6" 
           target="_blank"
           rel="noopener noreferrer">
           <img
