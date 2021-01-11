@@ -41,7 +41,7 @@ exports.render = ({ title, date, content }) => {
         <div id="postContainer">
           <div id="postItem"> 
             <h1 id="title">${title}</h1>
-            <p id="date">${date.toLocaleDateString()}</p>
+            <p id="date">${require('moment')(date).format('DD MMMM YYYY')}</p>
             ${content}
           </div>
         </div>
@@ -100,7 +100,7 @@ exports.render = ({ title, date, content }) => {
             alt="twitter"
           />
         </a>
-        <a href="https://dev.to/mvganeshkumar6" 
+        <a href="https://dev.to/mvganeshkumar06" 
           target="_blank"
           rel="noopener noreferrer">
           <img
