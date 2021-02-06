@@ -54,7 +54,7 @@ a:hover {
 }
 
 #navbar a {
-  margin-right: 5vw;
+  margin-right: 3vw;
 }
 
 #profile {
@@ -66,7 +66,7 @@ a:hover {
 
 #blogContainer {
   width: 100vw;
-  margin: 80px 0px 50px 0px;
+  margin: 80px 0px 8vw 0px;
   padding: 10px;
   display: flex;
   flex-direction: column;
@@ -88,9 +88,6 @@ a:hover {
 }
 
 footer {
-  position: absolute;
-  bottom: 0;
-  margin-top: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -119,15 +116,18 @@ footer {
 }
 
 @media (min-width: 400px) {
-  #navText {
-    display: inline;
-    font-weight: bold;
-  }
   #blogPostsList li {
     width: 400px;
   }
   #socialFooter .icons {
     margin: 0px 5px;
+  }
+}
+
+@media (min-width:500px){
+  #navText {
+    display: inline;
+    font-weight: bold;
   }
 }
 

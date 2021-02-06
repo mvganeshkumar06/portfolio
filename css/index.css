@@ -50,7 +50,7 @@ a:hover {
 }
 
 #navbar a {
-  margin-right: 5vw;
+  margin-right: 3vw;
 }
 
 #home {
@@ -154,12 +154,15 @@ footer {
 }
 
 @media (min-width: 400px) {
+  #socialFooter .icons {
+    margin: 0px 5px;
+  }
+}
+
+@media (min-width:500px){
   #navText {
     display: inline;
     font-weight: bold;
-  }
-  #socialFooter .icons {
-    margin: 0px 5px;
   }
 }
 
