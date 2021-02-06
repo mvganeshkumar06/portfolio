@@ -1,0 +1,161 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-size: small;
+    --primaryColor: #0084ffc4;
+    --secondaryColor: #f8a436;
+    --linkColor: rgb(162, 0, 255);
+  }
+  
+  #navbarContainer {
+    width: 100vw;
+    height: 50px;
+    position: fixed;
+    top: 0px;
+    background-color: white;
+    box-shadow: 1px 1px 10px 1px rgb(224, 224, 224);
+  }
+  
+  #navbar {
+    width: 100vw;
+    height: 50px;
+    position: fixed;
+    top: 0px;
+    font-weight: bolder;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  
+  ul {
+    list-style-type: none;
+  }
+  
+  a {
+    text-decoration: none;
+    color: black;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  #navText {
+    position: fixed;
+    top: 0px;
+    margin: 18px 0px 10px 1vw;
+    display: none;
+  }
+  
+  #navbar a {
+    margin-right: 3vw;
+  }
+  
+  #resume {
+    color: var(--secondaryColor);
+  }
+
+  #profile {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    margin: 5px 5px 5px 10px;
+  }
+
+  #social {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .icons {
+    width: 40px;
+    height: 40px;
+    margin: 10px;
+    border-radius: 5px;
+  }
+  
+  .icons:hover {
+    box-shadow: 1px 1px 1px 1px rgb(104, 104, 104);
+  }
+  #resumeContainer{
+      display: flex;
+      justify-content: center;
+  }
+  #resumeContent{
+      width:50vw;
+      height:72vw;
+      margin: 80px 0px 50px 0px;
+  }
+
+  footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  #heartIcon {
+    width: 20px;
+    height: 20px;
+  }
+  
+  #iconAttribution {
+    color: var(--linkColor);
+    margin: 5px 0px;
+  }
+  
+  #socialFooter {
+    display: flex;
+    justify-content: center;
+  }
+  
+  #socialFooter .icons {
+    width: 30px;
+    height: 30px;
+    margin: 0px 1px;
+    border-radius: 5px;
+  }
+  
+  @media (min-width: 330px) and (max-width: 500px){
+    #resumeContent{
+      width: 100vw;
+      height: 140vw;
+    }
+  }
+
+  @media (min-width: 400px) {
+    #socialFooter .icons {
+      margin: 0px 5px;
+    }
+  }
+  
+  @media (min-width:500px){
+    #navText {
+      display: inline;
+      font-weight: bold;
+    }
+  }
+
+  @media (min-width:500px) and (max-width:650px){
+    #resumeContent{
+      width: 70vw;
+      height:100vw;
+    }
+  }
+
+  @media (min-width: 600px) {
+    * {
+      font-size: medium;
+    }
+    #navText {
+      margin: 15px 0px 10px 1vw;
+    }
+    #skillCard,
+    #educationCard,
+    #aboutCard {
+      width: 580px;
+    }
+  }
+  
